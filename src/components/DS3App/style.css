@@ -1,0 +1,5 @@
+.tbl-container {
+	height: 400px;
+	overflow: scroll;
+	display: inline-block;
+}
