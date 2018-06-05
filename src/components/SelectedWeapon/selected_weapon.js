@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Infusions from './infusions.js';
+import Infusions from './Infusions/';
+import ICONS from './Icons';
 import './style.css';
 
 
@@ -37,7 +38,7 @@ class SelectedWeapon extends Component {
 					</tr>
 					<tr>
 						<td colSpan='2'>
-							<img title="type"  src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/weapon_type-icon.jpg" alt='type icon'/>
+							<img title="type"  src={ICONS.type} alt='type icon'/>
 							{this.props.weapon.basic_data.wep_type}
 						</td>
 					</tr>
@@ -48,31 +49,31 @@ class SelectedWeapon extends Component {
 					</tr>
 					<tr>
 						<td colSpan='2'>
-							<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-wp_physicalAttack.png" alt='physical icon'/>	
+							<img src={ICONS.physical} alt='physical icon'/>	
 							Physical {this.props.weapon.base_damages[currentInfusion].physical}
 						</td>
 					</tr>
 					<tr>
 						<td colSpan='2'>
-							<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-magicbonus.png" alt='magic icon' />
+							<img src={ICONS.magic} alt='magic icon' />
 							Magic {this.props.weapon.base_damages[currentInfusion].magic}
 						</td>
 					</tr>
 					<tr>
 						<td colSpan='2'>
-							<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-firebonus.png" alt='fire icon'/>	
+							<img src={ICONS.fire} alt='fire icon'/>	
 							Fire {this.props.weapon.base_damages[currentInfusion].fire}
 						</td>
 					</tr>
 					<tr>
 						<td colSpan='2'>
-							<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-lightningbonus.png" alt='lightning icon'/>	
+							<img src={ICONS.lightning} alt='lightning icon'/>	
 							Lightning {this.props.weapon.base_damages[currentInfusion].lightning}
 						</td>
 					</tr>
 					<tr>
 						<td colSpan='2'>
-							<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-darkbonus.png" alt='dark icon'/>	
+							<img src={ICONS.dark} alt='dark icon'/>	
 							Dark {this.props.weapon.base_damages[currentInfusion].dark}
 						</td>
 					</tr>
@@ -86,19 +87,19 @@ class SelectedWeapon extends Component {
 					</tr>
 					<tr>
 						<td>
-							<img title='str' src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/STR.jpg" alt="str icon"/>
+							<img title='str' src={ICONS.str} alt="str icon"/>
 							{this.props.weapon.basic_data.str_req}
 						</td>
 						<td>
-							<img title='dex' src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/DEX.jpg" alt="dex icon" />
+							<img title='dex' src={ICONS.dex} alt="dex icon" />
 							{this.props.weapon.basic_data.dex_req}
 						</td>
 						<td>
-							<img title='int' src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/INT.jpg" alt="int icon" />
+							<img title='int' src={ICONS.int} alt="int icon" />
 							{this.props.weapon.basic_data.int_req}
 						</td>
 						<td>
-							<img title='faith' src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/FTH.jpg" alt="faifth icon" />
+							<img title='faith' src={ICONS.fth} alt="faifth icon" />
 							{this.props.weapon.basic_data.faith_req}
 						</td>
 					</tr>

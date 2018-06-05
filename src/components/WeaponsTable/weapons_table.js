@@ -41,13 +41,11 @@ class WeaponsTable extends Component {
 		}
 
 		return (
-			<div>
-				<table>
-					<tbody>
-						{elements}
-					</tbody>
-				</table>
-			</div>
+			<table>
+				<tbody>
+					{elements}
+				</tbody>
+			</table>
 		);
 	}
 }

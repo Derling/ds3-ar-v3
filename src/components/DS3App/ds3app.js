@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import WeaponsTable from '../WeaponsTable';
-import axios from 'axios';
 import SelectedWeapon from '../SelectedWeapon';
+import Stats from '../Stats';
+import axios from 'axios';
 import './style.css';
 
 
@@ -56,7 +57,8 @@ class DS3App extends Component {
 							setInfusion={this.setInfusion}/>
 				</div>
 				<div className='col-md-4 col-sm-12 tbl-container'>
-					
+					<Stats weapon={this.state.selectedWeapon}
+							infusion={this.state.selectedInfusion}/>
 				</div>
 			</div>
 		);

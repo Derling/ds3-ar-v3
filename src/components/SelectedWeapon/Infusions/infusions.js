@@ -12,7 +12,6 @@ class Infusions extends Component {
 	}
 
 	render() {
-		console.log('creating infusions component');
 		return (
 			<select onChange={this.handleChange} value={this.props.value}>
 				<option value="Blessed">Blessed</option>
