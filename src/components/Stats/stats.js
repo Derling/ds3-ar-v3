@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Classes from './Classes';
+import Calculator from './calculator.js';
 
 class Stats extends Component {
 	constructor(props) {
@@ -15,6 +16,11 @@ class Stats extends Component {
 	}
 
 	render() {
+		console.log(this.props.weapon.name);
+		console.log(this.props.infusion);
+		let calculator = new Calculator();
+		const stats = {str:'16', dex:'18', int:'9', faifth:'9', luck: '7'}
+		console.log(calculator.getBonuses(this.props.weapon, this.props.infusion, stats))
 		return (
 			<table>
 				<tbody>
