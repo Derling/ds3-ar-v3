@@ -14,7 +14,7 @@ class Calculator {
 
 	getBonuses(weapon, infusion, stats) {
 		let bonuses = this.BONUSTYPES.map( type => {
-			let statIndex = "" + weapon.saturation_index[infusion][type];
+			let statIndex = weapon.saturation_index[infusion][type];
 			let statBonus = this.TYPEINDEX[type].map( index => {
 					let typeStat = "" + this.TYPESTATS[index];
 					let scalingCoeff = weapon.scaling_coeff[infusion][index] / 100;
