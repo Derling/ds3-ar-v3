@@ -17,9 +17,7 @@ class DS3App extends Component {
 			selectedWeapon: null,
 			weapons: null,
 			selectedInfusion: null
-		}
-		console.log(this.state)
-	}
+		}	}
 
 	setInfusion(infusion) {
 		this.setState({selectedInfusion: infusion})
@@ -27,7 +25,7 @@ class DS3App extends Component {
 
 	changeSelected(weapon) {
 		if(this.state) {
-			this.setState({selectedWeapon: weapon});
+			this.setState({selectedWeapon: weapon, selectedInfusion: "Normal"});
 		}
 	}
 
