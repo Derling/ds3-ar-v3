@@ -10,6 +10,7 @@ import SATURATION from './saturation.js';
 // fire scales from int and faith
 // lightning scales from faifth
 // dark scales from int and faith
+// in the rare case of a hollow infusion, luck based scaling uses physical base damage
 // *** bless and hollow weapons scale from the base physical damage *** 
 
 const getSaturation = (index, level) => {
@@ -22,7 +23,7 @@ class Calculator {
 		// mapping that helps gather weapon information from json data
 		this.DMGTYPES = ["physical", "magic", "fire","lightning", "dark", "luck"];
 		this.TYPEINDEX = {"0": [0,1],  "1": [2], "2": [2, 3], "3": [3], "4": [2, 3], "5": [4]};
-		this.TYPESTATS = ["str", "dex", "int", "faifth", "luck"];
+		this.TYPESTATS = ["str", "dex", "int", "faith", "luck"];
 	}
 
 	getBonuses(weapon, infusion, stats) {
@@ -42,7 +43,8 @@ class Calculator {
 		// blessed infused weapons have special scaling
 		if(infusion === "Blessed") {
 			let scalingCoeff = weapon.scaling_coeff.Blessed[3] / 100;
-			let saturation = getSaturation(weapon.saturation_index.Blessed.physical, stats.faifth) / 100;
+			let saturation = getSaturation(weapon.saturation_index.Blessed.physical, stats.faith) / 100;
+			console.log()
 			bonuses.physical += weapon.base_damages.Blessed.physical * (scalingCoeff * saturation);
 		}
 		

@@ -13,11 +13,19 @@ class DS3App extends Component {
 		super();
 		this.changeSelected = this.changeSelected.bind(this);
 		this.setInfusion = this.setInfusion.bind(this);
+		this.updateBonuses = this.updateBonuses.bind(this);
 		this.state = {
 			selectedWeapon: null,
 			weapons: null,
-			selectedInfusion: null
-		}	}
+			selectedInfusion: null,
+			bonuses: {}
+		}	
+	}
+
+	updateBonuses(newBonuses) {
+		this.setState({bonuses: newBonuses});
+		console.log(newBonuses);
+	}
 
 	setInfusion(infusion) {
 		this.setState({selectedInfusion: infusion})
@@ -52,11 +60,13 @@ class DS3App extends Component {
 				<div className='col-md-4 col-sm-12 tbl-container'>
 					<SelectedWeapon weapon={this.state.selectedWeapon} 
 							infusion={this.state.selectedInfusion}
-							setInfusion={this.setInfusion}/>
+							setInfusion={this.setInfusion}
+							bonuses={this.state.bonuses}/>
 				</div>
 				<div className='col-md-4 col-sm-12 tbl-container'>
 					<Stats weapon={this.state.selectedWeapon}
-							infusion={this.state.selectedInfusion}/>
+							infusion={this.state.selectedInfusion}
+							updateBonus={this.updateBonuses}/>
 				</div>
 			</div>
 		);

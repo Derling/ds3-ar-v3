@@ -18,7 +18,7 @@ class Classes extends Component {
 				<option value="Warrior">Warrior</option>
 				<option value="Herald">Herald</option>
 				<option value="Thief">Thief</option>
-				<option value="Assasin">Assassin</option>
+				<option value="Assassin">Assassin</option>
 				<option value="Sorcerer">Sorcerer</option>
 				<option value="Pyromancer">Pyromancer</option>
 				<option value="Cleric">Cleric</option>

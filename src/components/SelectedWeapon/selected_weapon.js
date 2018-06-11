@@ -19,7 +19,6 @@ class SelectedWeapon extends Component {
 		if(!this.props.weapon) {
 			return null;
 		}
-		console.log(this.props)
 		const imageUrl = "http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/" + this.props.weapon.url + '.png';
 		const currentInfusion = this.props.infusion;
 		const infusions = this.props.weapon.basic_data.infusable === "!0" ? 
