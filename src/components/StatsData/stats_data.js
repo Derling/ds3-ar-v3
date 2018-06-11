@@ -37,7 +37,6 @@ class StatsData extends Component {
 
 	validateStats() {
 		// send bonus damage to parent for sibling component to display them
-		console.log("stats: ", this.getStats());
 		if(this.meetsRequirements()){
 			this.props.updateBonus(this.calculateBonuses());
 		}
@@ -48,12 +47,13 @@ class StatsData extends Component {
 	}
 
 	componentWillMount() {
+		// initial rendering of component
 		this.validateStats();
 	}
 
 	componentDidUpdate(prevProps) {
-		// weapon is being changed
-		if(this.props.weapon !== prevProps.weapon) {
+		// weapon or infusion have been changed which affect the damage bonuses
+		if(this.props.weapon !== prevProps.weapon || this.props.infusion !== prevProps.infusion) {
 			this.validateStats();
 		}
 	}
