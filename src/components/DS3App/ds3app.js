@@ -23,11 +23,7 @@ class DS3App extends Component {
 	}
 
 	updateBonuses(bonuses) {
-		this.setState({bonuses}, this.print);
-	}
-
-	print() {
-		console.log(this.state.bonuses);
+		this.setState({bonuses});
 	}
 
 	setInfusion(infusion) {
