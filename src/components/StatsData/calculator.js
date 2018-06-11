@@ -38,14 +38,13 @@ class Calculator {
 					let saturation = getSaturation(statIndex, stats[typeStat]) /100
 					return scalingCoeff  * saturation;
 				});
-			bonuses[type] += weapon.base_damages[infusion][type] * statBonus.reduce((first, second) => first + second)
+			bonuses[type] += Math.floor(weapon.base_damages[infusion][type] * statBonus.reduce((first, second) => first + second));
 		}
 		// blessed infused weapons have special scaling
 		if(infusion === "Blessed") {
 			let scalingCoeff = weapon.scaling_coeff.Blessed[3] / 100;
 			let saturation = getSaturation(weapon.saturation_index.Blessed.physical, stats.faith) / 100;
-			console.log()
-			bonuses.physical += weapon.base_damages.Blessed.physical * (scalingCoeff * saturation);
+			bonuses.physical += Math.floor(weapon.base_damages.Blessed.physical * (scalingCoeff * saturation));
 		}
 		
 		return bonuses;
