@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import WeaponsTable from '../WeaponsTable';
 import SelectedWeapon from '../SelectedWeapon';
-import Stats from '../Stats';
+import Stats from '../StatsData';
 import axios from 'axios';
 import './style.css';
 
