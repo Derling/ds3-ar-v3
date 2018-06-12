@@ -42,7 +42,7 @@ class StatsData extends Component {
 		}
 		else{
 			// base stats havent been met so the weapon cannot receive any stat bonuses
-			this.props.updateBonus({});
+			this.props.updateBonus(null);
 		}
 	}
 
@@ -63,8 +63,7 @@ class StatsData extends Component {
 	}
 
 	changeClass(newClass) {
-		this.setState({class: newClass});
-		this.validateStats();
+		this.setState({class: newClass}, this.validateStats);
 	}
 
 	meetsRequirements() {
@@ -89,8 +88,28 @@ class StatsData extends Component {
 		});
 	}
 
+	calculateAttackRating() {
+		// add all the base damages and bonus damages to get the total attack rating of current weapon
+		let baseDmgs = this.props.weapon.base_damages[this.props.infusion]
+		let bonusDmgs = this.props.bonuses;
+		return Math.floor(
+			baseDmgs.physical + baseDmgs.magic +
+			baseDmgs.fire + baseDmgs.lightning + baseDmgs.dark +
+			bonusDmgs.physical + bonusDmgs.magic + bonusDmgs.fire +
+			bonusDmgs.lightning + bonusDmgs.dark  
+		);
+	}
+
 	render() {
 		const state = this.state;
+		let attackRating;
+		// if there are any bonuses, render the total attack rating
+		if(this.props.bonuses) {
+			attackRating = <td> Attack Rating: {this.calculateAttackRating()} </td>
+		}
+		else {
+			attackRating = <td> Requirement Not Met! </td>
+		}
 		return (
 			<table>
 				<tbody>
@@ -184,6 +203,9 @@ class StatsData extends Component {
 								-
 							</button>
 						</td>
+					</tr>
+					<tr>
+						{attackRating}
 					</tr>
 				</tbody>
 			</table>

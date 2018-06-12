@@ -65,7 +65,8 @@ class DS3App extends Component {
 				<div className='col-md-4 col-sm-12 tbl-container'>
 					<Stats weapon={this.state.selectedWeapon}
 							infusion={this.state.selectedInfusion}
-							updateBonus={this.updateBonuses}/>
+							updateBonus={this.updateBonuses}
+							bonuses={this.state.bonuses}/>
 				</div>
 			</div>
 		);
