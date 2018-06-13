@@ -24,6 +24,7 @@ class SelectedWeapon extends Component {
 		const infusions = this.props.weapon.basic_data.infusable === "!0" ? 
 							<Infusions value={currentInfusion} 
 								selected={this.changeInfusion}/> : null;
+		console.log(this.bonuses);
 		return (
 			<table>
 				<tbody>
@@ -49,31 +50,56 @@ class SelectedWeapon extends Component {
 					<tr>
 						<td colSpan='2'>
 							<img src={ICONS.physical} alt='physical icon'/>	
-							Physical {this.props.weapon.base_damages[currentInfusion].physical}
+							Physical 
+							{
+								this.props.weapon.base_damages[currentInfusion].physical + (
+								this.props.bonuses && this.props.bonuses.physical ? (
+									"+" + this.props.bonuses.physical) : (""))
+							}
 						</td>
 					</tr>
 					<tr>
 						<td colSpan='2'>
 							<img src={ICONS.magic} alt='magic icon' />
-							Magic {this.props.weapon.base_damages[currentInfusion].magic}
+							Magic 
+							{
+								this.props.weapon.base_damages[currentInfusion].magic + (
+								this.props.bonuses && this.props.bonuses.magic ? (
+									"+" + this.props.bonuses.magic) : (""))
+							}
 						</td>
 					</tr>
 					<tr>
 						<td colSpan='2'>
 							<img src={ICONS.fire} alt='fire icon'/>	
-							Fire {this.props.weapon.base_damages[currentInfusion].fire}
+							Fire 
+							{
+								this.props.weapon.base_damages[currentInfusion].fire + (
+								this.props.bonuses && this.props.bonuses.fire ? (
+									"+" + this.props.bonuses.fire) : (""))
+							}
 						</td>
 					</tr>
 					<tr>
 						<td colSpan='2'>
 							<img src={ICONS.lightning} alt='lightning icon'/>	
-							Lightning {this.props.weapon.base_damages[currentInfusion].lightning}
+							Lightning
+							{
+								this.props.weapon.base_damages[currentInfusion].lightning + (
+								this.props.bonuses && this.props.bonuses.lightning ? (
+									"+" + this.props.bonuses.lightning) : (""))
+							}
 						</td>
 					</tr>
 					<tr>
 						<td colSpan='2'>
 							<img src={ICONS.dark} alt='dark icon'/>	
-							Dark {this.props.weapon.base_damages[currentInfusion].dark}
+							Dark 
+							{
+								this.props.weapon.base_damages[currentInfusion].dark + (
+								this.props.bonuses && this.props.bonuses.dark ? (
+									"+" + this.props.bonuses.dark) : (""))
+							}
 						</td>
 					</tr>
 					<tr>
