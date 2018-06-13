@@ -24,7 +24,6 @@ class SelectedWeapon extends Component {
 		const infusions = this.props.weapon.basic_data.infusable === "!0" ? 
 							<Infusions value={currentInfusion} 
 								selected={this.changeInfusion}/> : null;
-		console.log(this.bonuses);
 		return (
 			<table>
 				<tbody>
