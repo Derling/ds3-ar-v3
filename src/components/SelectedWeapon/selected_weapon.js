@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Infusions from './Infusions/';
-import ICONS from './Icons';
+import ICONS from '../static/icons';
+import IMAGES from '../static/weapon';
 import './style.css';
 
 
@@ -19,7 +20,7 @@ class SelectedWeapon extends Component {
 		if(!this.props.weapon) {
 			return null;
 		}
-		const imageUrl = "http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/" + this.props.weapon.url + '.png';
+		console.log(this.props);
 		const currentInfusion = this.props.infusion;
 		const infusions = this.props.weapon.basic_data.infusable === "!0" ? 
 							<Infusions value={currentInfusion} 
@@ -32,7 +33,7 @@ class SelectedWeapon extends Component {
 							{this.props.weapon.name}
 						</td>
 						<td rowSpan="8" colSpan="2">
-							<img width="300" height="300" title={this.props.weapon.name} alt={this.props.weapon.name} src={imageUrl}/>
+							<img width="300" height="300" title={this.props.weapon.name} alt={this.props.weapon.name} src={IMAGES[this.props.weapon.url]}/>
 						</td>
 					</tr>
 					<tr>
