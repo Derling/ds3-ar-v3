@@ -42,19 +42,19 @@ class DS3App extends Component {
 			return null;
 		}
 		return (
-			<div className="row">
-				<div className='col-md-4 col-sm-12 tbl-container'>
+			<div className="row main">
+				<div className='col-md-5 col-sm-12 tbl-container'>
 					<WeaponsTable weapons={WEAPONS} 
 							weaponSelected={this.changeSelected} />
 				</div>
-				<div className='col-md-4 col-sm-12 tbl-container'>
+				<div className='col-md-5 col-sm-12 tbl-container'>
 					<SelectedWeapon 
 							weapon={this.state.selectedWeapon}
 							infusion={this.state.selectedInfusion}
 							setInfusion={this.setInfusion}
 							bonuses={this.state.bonuses}/>
 				</div>
-				<div className='col-md-4 col-sm-12 tbl-container'>
+				<div className='col-md-2 col-sm-12 tbl-container text-center'>
 					<Stats weapon={this.state.selectedWeapon}
 							infusion={this.state.selectedInfusion}
 							updateBonus={this.updateBonuses}

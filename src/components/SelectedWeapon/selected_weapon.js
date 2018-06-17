@@ -51,55 +51,55 @@ class SelectedWeapon extends Component {
 						<td colSpan='2'>
 							<img src={ICONS.physical} alt='physical icon'/>	
 							Physical 
-							{
-								this.props.weapon.base_damages[currentInfusion].physical + (
+							<span className="dmgs">{
+								Math.floor(this.props.weapon.base_damages[currentInfusion].physical) + (
 								this.props.bonuses && this.props.bonuses.physical ? (
 									"+" + this.props.bonuses.physical) : (""))
-							}
+							}</span>
 						</td>
 					</tr>
 					<tr>
 						<td colSpan='2'>
 							<img src={ICONS.magic} alt='magic icon' />
-							Magic 
-							{
-								this.props.weapon.base_damages[currentInfusion].magic + (
+							Magic
+							<span className="dmgs">{
+								Math.floor(this.props.weapon.base_damages[currentInfusion].magic) + (
 								this.props.bonuses && this.props.bonuses.magic ? (
 									"+" + this.props.bonuses.magic) : (""))
-							}
+							}</span>
 						</td>
 					</tr>
 					<tr>
 						<td colSpan='2'>
 							<img src={ICONS.fire} alt='fire icon'/>	
 							Fire 
-							{
-								this.props.weapon.base_damages[currentInfusion].fire + (
+							<span className="dmgs">{
+								Math.floor(this.props.weapon.base_damages[currentInfusion].fire) + (
 								this.props.bonuses && this.props.bonuses.fire ? (
 									"+" + this.props.bonuses.fire) : (""))
-							}
+							}</span>
 						</td>
 					</tr>
 					<tr>
 						<td colSpan='2'>
 							<img src={ICONS.lightning} alt='lightning icon'/>	
 							Lightning
-							{
-								this.props.weapon.base_damages[currentInfusion].lightning + (
+							<span className="dmgs">{
+								Math.floor(this.props.weapon.base_damages[currentInfusion].lightning) + (
 								this.props.bonuses && this.props.bonuses.lightning ? (
 									"+" + this.props.bonuses.lightning) : (""))
-							}
+							}</span>
 						</td>
 					</tr>
 					<tr>
 						<td colSpan='2'>
 							<img src={ICONS.dark} alt='dark icon'/>	
 							Dark 
-							{
-								this.props.weapon.base_damages[currentInfusion].dark + (
+							<span className="dmgs">{
+								Math.floor(this.props.weapon.base_damages[currentInfusion].dark) + (
 								this.props.bonuses && this.props.bonuses.dark ? (
 									"+" + this.props.bonuses.dark) : (""))
-							}
+							}</span>
 						</td>
 					</tr>
 					<tr>

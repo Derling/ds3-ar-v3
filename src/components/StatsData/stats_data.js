@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import Classes from './Classes';
 import Calculator from './calculator.js';
 import CLASSESDATA from './classes_data.js';
+import './style.css';
+import str from '../static/icons/str.jpg';
+import dex from '../static/icons/dex.jpg';
+import int from '../static/icons/int.jpg';
+import fth from '../static/icons/fth.jpg';
+import luck from '../static/icons/luck.jpg';
 
 const MAXSTAT = 99; // maximum stat level is 99 for all classes
 const MINSTAT = 0; // minimum stat level varies(dependent on class)
@@ -105,103 +111,132 @@ class StatsData extends Component {
 		let attackRating;
 		// if there are any bonuses, render the total attack rating
 		if(this.props.bonuses) {
-			attackRating = <td> Attack Rating: {this.calculateAttackRating()} </td>
+			attackRating = <td className="text-center">
+								<span style={{color:"green", fontSize:"20px"}}>
+									<strong> Attack Rating: {this.calculateAttackRating()} </strong>
+								</span>
+							</td>
 		}
 		else {
-			attackRating = <td> Requirement Not Met! </td>
+			attackRating = <td className="text-center">
+								<span style={{color:"red", fontSize:"18px"}}>
+									<strong> Requirement not met! </strong>
+								</span>
+							</td>
 		}
 		return (
 			<table>
 				<tbody>
-					<tr colSpan='2'>
-						<td>
+					<tr>
+						<td colSpan='2' className="text-center label">
 							Class: <Classes value={this.state.class} change={this.changeClass}/>
 						</td>
 					</tr>
-					<tr colSpan='2'>
-						<td>
+					<tr>
+						<td colSpan='2' className="text-center label">
 							Stats
 						</td>
 					</tr>
-					<tr colSpan='2'>
-						<td>
+					<tr >
+						<td colSpan='2' className="text-center stat-data">
 							Level: {
 								CLASSESDATA[state.class].level + state.level
 							}
 						</td>
-					</tr><tr>
-						<td>
-							str: {
-								state.str + CLASSESDATA[state.class].str
-							}
-						</td>
-						<td>
-							<button onClick={this.statChange.bind(this, "str", 1)}>
-								+
-							</button>
-							<button onClick={this.statChange.bind(this, "str", -1)}>
-								-
-							</button>
+					</tr>
+					<tr>
+						<td className="stat-data" colSpan="2">
+							<div className="stat-label">
+								<img src={str} alt="Strength" />
+								Strength
+							</div>
+							<div className="buttons">
+								{
+									state.str + CLASSESDATA[state.class].str
+								}
+								<button onClick={this.statChange.bind(this, "str", 1)}>
+									+
+								</button>
+								<button onClick={this.statChange.bind(this, "str", -1)}>
+									-
+								</button>
+							</div>
 						</td>
 					</tr>
 					<tr>
-						<td>
-							dex: {
-								state.dex + CLASSESDATA[state.class].dex
-							}
-						</td>
-						<td>
-							<button onClick={this.statChange.bind(this, "dex", 1)}>
-								+
-							</button>
-							<button onClick={this.statChange.bind(this, "dex", -1)}>
-								-
-							</button>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							int: {
-								state.int + CLASSESDATA[state.class].int
-							}
-						</td>
-						<td>
-							<button onClick={this.statChange.bind(this, "int", 1)}>
-								+
-							</button>
-							<button onClick={this.statChange.bind(this, "int", -1)}>
-								-
-							</button>
+						<td className="stat-data" colSpan="2">
+							<div className="stat-label">
+								<img src={dex} alt="Dexterity" />
+								Dexterity
+							</div>
+							<div className="buttons">
+								{
+									state.dex + CLASSESDATA[state.class].dex
+								}
+								<button onClick={this.statChange.bind(this, "dex", 1)}>
+									+
+								</button>
+								<button onClick={this.statChange.bind(this, "dex", -1)}>
+									-
+								</button>
+							</div>
 						</td>
 					</tr>
 					<tr>
-						<td>
-							faith: {
-								state.faith + CLASSESDATA[state.class].faith
-							}
-						</td>
-						<td>
-							<button onClick={this.statChange.bind(this, "faith", 1)}>
-								+
-							</button>
-							<button onClick={this.statChange.bind(this, "faith", -1)}>
-								-
-							</button>
+						<td className="stat-data" colSpan="2">
+							<div className="stat-label">
+								<img src={int} alt="Intelligence" />
+								Intelligence
+							</div>
+							<div className="buttons">
+								{
+									state.int + CLASSESDATA[state.class].int
+								}
+								<button onClick={this.statChange.bind(this, "int", 1)}>
+									+
+								</button>
+								<button onClick={this.statChange.bind(this, "int", -1)}>
+									-
+								</button>
+							</div>
 						</td>
 					</tr>
 					<tr>
-						<td>
-							luck: {
-								state.luck + CLASSESDATA[state.class].luck
-							}
+						<td className="stat-data" colSpan="2">
+							<div className="stat-label">
+								<img src={fth} alt="Faith" />
+								Faith
+							</div>
+							<div className="buttons">
+								{
+									state.faith + CLASSESDATA[state.class].faith
+								}
+								<button onClick={this.statChange.bind(this, "faith", 1)}>
+									+
+								</button>
+								<button onClick={this.statChange.bind(this, "faith", -1)}>
+									-
+								</button>
+							</div>
 						</td>
-						<td>
-							<button onClick={this.statChange.bind(this, "luck", 1)}>
-								+
-							</button>
-							<button onClick={this.statChange.bind(this, "luck", -1)}>
-								-
-							</button>
+					</tr>
+					<tr>
+						<td className="stat-data" colSpan="2">
+							<div className="stat-label">
+								<img src={luck} alt="Luck" />
+								Luck
+							</div>
+							<div className="buttons">
+								{
+									state.luck + CLASSESDATA[state.class].luck
+								}
+								<button onClick={this.statChange.bind(this, "luck", 1)}>
+									+
+								</button>
+								<button onClick={this.statChange.bind(this, "luck", -1)}>
+									-
+								</button>
+							</div>
 						</td>
 					</tr>
 					<tr>
