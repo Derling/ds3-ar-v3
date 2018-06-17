@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import WeaponCell from './weapon_cell.js';
 import './style.css';
+import IMAGES from '../static/weapon';
 
 class WeaponsTable extends Component {
 
@@ -18,34 +18,19 @@ class WeaponsTable extends Component {
 			return null;
 		}
 		
-		let elements = [];
-		let row = 0;
-
-		while(row < this.props.weapons.length/5) {
-			let colIndex = row * 5;
-			elements.push(
-				<tr key={colIndex}>
-					<WeaponCell data={this.props.weapons[colIndex]} 
-						selectWeapon={this.handleClick}/>
-					<WeaponCell data={this.props.weapons[colIndex + 1]} 
-						selectWeapon={this.handleClick}/>
-					<WeaponCell data={this.props.weapons[colIndex + 2]} 
-						selectWeapon={this.handleClick}/>
-					<WeaponCell data={this.props.weapons[colIndex + 3]} 
-						selectWeapon={this.handleClick}/>
-					<WeaponCell data={this.props.weapons[colIndex + 4]} 
-						selectWeapon={this.handleClick}/>
-				</tr>
-			);
-			row ++;
-		}
+		let elements = this.props.weapons.map((weapon, index) => {
+			return(
+				<div key={index} onClick={() => this.handleClick(weapon)} title={weapon.name} className="icon-wrapper">
+					<img className="icon" alt={weapon.name}
+						src={IMAGES[weapon.url]} />
+				</div>
+			)
+		})
 
 		return (
-			<table>
-				<tbody>
-					{elements}
-				</tbody>
-			</table>
+			<div className="component-wrapper">
+				{elements}
+			</div>
 		);
 	}
 }

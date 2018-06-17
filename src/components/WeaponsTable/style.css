@@ -1,0 +1,10 @@
+.icon {
+	width: 100px;
+	height: 100px;
+	object-fit: contain;
+}
+
+.icon-wrapper {
+	width: 20%;
+	display:inline-block;
+}

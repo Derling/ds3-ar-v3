@@ -19,6 +19,10 @@
 	font-weight: bold;
 }
 
-table {
-	margin: 0px auto;
+.stat {
+	height: 11%;
+}
+
+.component-wrapper {
+	height: 100%;
 }

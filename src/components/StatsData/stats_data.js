@@ -125,125 +125,106 @@ class StatsData extends Component {
 							</td>
 		}
 		return (
-			<table>
-				<tbody>
-					<tr>
-						<td colSpan='2' className="text-center label">
+			<div class="component-wrapper">
+			<div class="stat">
 							Class: <Classes value={this.state.class} change={this.changeClass}/>
-						</td>
-					</tr>
-					<tr>
-						<td colSpan='2' className="text-center label">
-							Stats
-						</td>
-					</tr>
-					<tr >
-						<td colSpan='2' className="text-center stat-data">
-							Level: {
-								CLASSESDATA[state.class].level + state.level
-							}
-						</td>
-					</tr>
-					<tr>
-						<td className="stat-data" colSpan="2">
-							<div className="stat-label">
-								<img src={str} alt="Strength" />
-								Strength
-							</div>
-							<div className="buttons">
-								{
-									state.str + CLASSESDATA[state.class].str
-								}
-								<button onClick={this.statChange.bind(this, "str", 1)}>
-									+
-								</button>
-								<button onClick={this.statChange.bind(this, "str", -1)}>
-									-
-								</button>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td className="stat-data" colSpan="2">
-							<div className="stat-label">
-								<img src={dex} alt="Dexterity" />
-								Dexterity
-							</div>
-							<div className="buttons">
-								{
-									state.dex + CLASSESDATA[state.class].dex
-								}
-								<button onClick={this.statChange.bind(this, "dex", 1)}>
-									+
-								</button>
-								<button onClick={this.statChange.bind(this, "dex", -1)}>
-									-
-								</button>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td className="stat-data" colSpan="2">
-							<div className="stat-label">
-								<img src={int} alt="Intelligence" />
-								Intelligence
-							</div>
-							<div className="buttons">
-								{
-									state.int + CLASSESDATA[state.class].int
-								}
-								<button onClick={this.statChange.bind(this, "int", 1)}>
-									+
-								</button>
-								<button onClick={this.statChange.bind(this, "int", -1)}>
-									-
-								</button>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td className="stat-data" colSpan="2">
-							<div className="stat-label">
-								<img src={fth} alt="Faith" />
-								Faith
-							</div>
-							<div className="buttons">
-								{
-									state.faith + CLASSESDATA[state.class].faith
-								}
-								<button onClick={this.statChange.bind(this, "faith", 1)}>
-									+
-								</button>
-								<button onClick={this.statChange.bind(this, "faith", -1)}>
-									-
-								</button>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td className="stat-data" colSpan="2">
-							<div className="stat-label">
-								<img src={luck} alt="Luck" />
-								Luck
-							</div>
-							<div className="buttons">
-								{
-									state.luck + CLASSESDATA[state.class].luck
-								}
-								<button onClick={this.statChange.bind(this, "luck", 1)}>
-									+
-								</button>
-								<button onClick={this.statChange.bind(this, "luck", -1)}>
-									-
-								</button>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						{attackRating}
-					</tr>
-				</tbody>
-			</table>
+			</div>
+			<div class="stat">
+					Stats
+			</div>
+			<div class="stat">
+					Level: {
+						CLASSESDATA[state.class].level + state.level
+					}
+			</div>
+			<div class="stat">
+				<span class="stat-label">
+					<img src={str} alt="Strength" />
+					Strength
+				</span>
+				<div className="buttons">
+					{
+						state.str + CLASSESDATA[state.class].str
+					}
+					<button onClick={this.statChange.bind(this, "str", 1)}>
+						+
+					</button>
+					<button onClick={this.statChange.bind(this, "str", -1)}>
+						-
+					</button>
+				</div>
+			</div>
+			<div class="stat">
+				<span class="stat-label">
+					<img src={dex} alt="Dexterity" />
+					Dexterity
+				</span>
+				<div className="buttons">
+					{
+						state.dex + CLASSESDATA[state.class].dex
+					}
+					<button onClick={this.statChange.bind(this, "dex", 1)}>
+						+
+					</button>
+					<button onClick={this.statChange.bind(this, "dex", -1)}>
+						-
+					</button>
+				</div>
+			</div>
+			<div class="stat">
+				<span class="stat-label">
+					<img src={int} alt="Intelligence" />
+					Intelligence
+				</span>
+				<div className="buttons">
+					{
+						state.int + CLASSESDATA[state.class].int
+					}
+					<button onClick={this.statChange.bind(this, "int", 1)}>
+						+
+					</button>
+					<button onClick={this.statChange.bind(this, "int", -1)}>
+						-
+					</button>
+				</div>
+			</div>
+			<div class="stat">
+				<span class="stat-label">
+					<img src={fth} alt="Faith" />
+					Faith
+				</span>
+				<div className="buttons">
+					{
+						state.faith + CLASSESDATA[state.class].faith
+					}
+					<button onClick={this.statChange.bind(this, "faith", 1)}>
+						+
+					</button>
+					<button onClick={this.statChange.bind(this, "faith", -1)}>
+						-
+					</button>
+				</div>
+			</div>
+			<div class="stat">
+				<span class="stat-label">
+					<img src={luck} alt="Luck" />
+					Luck
+				</span>
+				<div className="buttons">
+					{
+						state.luck + CLASSESDATA[state.class].luck
+					}
+					<button onClick={this.statChange.bind(this, "luck", 1)}>
+						+
+					</button>
+					<button onClick={this.statChange.bind(this, "luck", -1)}>
+						-
+					</button>
+				</div>
+			</div>
+			<div claass="stat">
+				{attackRating}
+			</div></div>
 		);
 	}
 }

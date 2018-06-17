@@ -1,14 +1,6 @@
 .tbl-container {
 	height: 400px;
-	overflow: scroll;
+	overflow: auto;
 	display: inline-block;
 	width: 100%;
-}
-
-table {
-	margin: 0px auto;
-}
-
-main {
-	display: inline-block;
 }
