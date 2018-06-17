@@ -3,24 +3,14 @@
 	float: right;
 }
 
-.label {
-	color: #b9ab8f;
-	font-size: 20px;
-	font-weight: bold;
-}
-
 .stat-label {
 	float:left;
 	display: inline;
 }
 
-.stat-data {
-	position: relative;
-	font-weight: bold;
-}
-
 .stat {
 	height: 11%;
+	color: white;
 }
 
 .component-wrapper {

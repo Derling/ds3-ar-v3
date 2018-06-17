@@ -12,7 +12,7 @@ class Classes extends Component {
 
 	render() {
 		return(
-			<select onChange={this.handleChange} value={this.props.value}>
+			<select style={{color:"black"}} onChange={this.handleChange} value={this.props.value}>
 				<option value="Knight">Knight</option>
 				<option value="Mercenary">Mercenary</option>
 				<option value="Warrior">Warrior</option>

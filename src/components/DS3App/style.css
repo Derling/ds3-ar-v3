@@ -4,3 +4,11 @@
 	display: inline-block;
 	width: 100%;
 }
+
+.app {
+	background-color: #151417;
+}
+
+.app-name {
+	color: gray;
+}

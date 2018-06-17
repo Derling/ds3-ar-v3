@@ -42,23 +42,26 @@ class DS3App extends Component {
 			return null;
 		}
 		return (
-			<div className="row main">
-				<div className='col-lg-4 col-md-12 tbl-container'>
-					<WeaponsTable weapons={WEAPONS} 
-							weaponSelected={this.changeSelected} />
-				</div>
-				<div className='col-lg-5 col-md-12 tbl-container'>
-					<SelectedWeapon 
-							weapon={this.state.selectedWeapon}
-							infusion={this.state.selectedInfusion}
-							setInfusion={this.setInfusion}
-							bonuses={this.state.bonuses}/>
-				</div>
-				<div className='col-lg-3 col-md-12 tbl-container text-center'>
-					<Stats weapon={this.state.selectedWeapon}
-							infusion={this.state.selectedInfusion}
-							updateBonus={this.updateBonuses}
-							bonuses={this.state.bonuses}/>
+			<div className="app">
+				<h1 className="text-center app-name"> Dark Souls 3 Attack Rating Calculator </h1>
+				<div className="row">
+					<div className='col-lg-4 col-md-12 tbl-container'>
+						<WeaponsTable weapons={WEAPONS} 
+								weaponSelected={this.changeSelected} />
+					</div>
+					<div className='col-lg-5 col-md-12 tbl-container'>
+						<SelectedWeapon 
+								weapon={this.state.selectedWeapon}
+								infusion={this.state.selectedInfusion}
+								setInfusion={this.setInfusion}
+								bonuses={this.state.bonuses}/>
+					</div>
+					<div className='col-lg-3 col-md-12 tbl-container text-center'>
+						<Stats weapon={this.state.selectedWeapon}
+								infusion={this.state.selectedInfusion}
+								updateBonus={this.updateBonuses}
+								bonuses={this.state.bonuses}/>
+					</div>
 				</div>
 			</div>
 		);

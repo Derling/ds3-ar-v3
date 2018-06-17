@@ -2,20 +2,34 @@
 	float: right;
 }
 
-.column {
-	width: 50%;
-	display: inline;
-}
-
 .selected-weapon {
 	height: 300px;
 	object-fit: contain;
 }
 
-.descriptor {
-	height: 12.5%;
+.weapon-name {
+	font-size: 18px;
+	color: white;
 }
 
-.footer {
+.descriptor {
+	font-size: 15px;
+	height: 12.5%;
+	display: block;
+	color: white;
+}
+.component-wrapper {
+	height: 100%;
+	width: 100%;
+}
+
+.req {
+	position: relative;
 	height: 50px;
+	color: white;
+}
+
+.bottom {
+	position: absolute;
+	bottom: 0;
 }
