@@ -1,5 +1,5 @@
 # Dark Souls 3 Attack Rating Calculator V3
-
+**[View App here](http://derlingb.info/projects/ds3-ar/app.html)**
 ### Overview 
 
 I remade my AngularJs project using ReactJs! I wanted to stick to the same asthetic so I did not style it differently</br>
